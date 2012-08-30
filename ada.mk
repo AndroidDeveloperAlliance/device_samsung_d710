@@ -13,7 +13,9 @@
 # limitations under the License.
 
 DEVICE_PACKAGE_OVERLAYS := device/samsung/d710/overlay
-		
+
+
+
 # Init files
 PRODUCT_COPY_FILES += \
 	device/samsung/d710/lpm.rc:root/lpm.rc \
@@ -274,5 +276,7 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 $(call inherit-product-if-exists, vendor/samsung/d710/d710-vendor.mk)
-$(call inherit-product-if-exists, vendor/common/common.mk)
 $(call inherit-product, hardware/samsung/exynos4210.mk)
+$(call inherit-product, device/samsung/d710/full_d710.mk)
+$(call inherit-product, vendor/ada/config/common_full_phone.mk)
+$(call inherit-product, vendor/ada/config/cdma.mk)
